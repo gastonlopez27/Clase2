@@ -5,11 +5,11 @@
 <body>
 <?php
 
-echo "Probando"
 
-$miarray();
 
-$miarray[0] = "primer indice del array";
+$miarray = array();
+
+$miarray[6] = "primer indice del array";
 
 var_dump($miarray);
 
