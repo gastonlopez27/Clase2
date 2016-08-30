@@ -48,8 +48,8 @@ class Rectangulo extends FiguraGeometrica
 	
 	//Atributos
 
-	private $_ladoDos;
-	private $_ladoUno;
+	private  $_ladoDos;
+	private  $_ladoUno;
 
 	//Constructor
 
@@ -58,6 +58,8 @@ class Rectangulo extends FiguraGeometrica
 		$_ladoUno = $l1;
 		$_ladoDos = $l2;
 
+		CalcularDatos();
+
 	}
 
 	//Metodos
@@ -65,11 +67,18 @@ class Rectangulo extends FiguraGeometrica
 	protected function CalcularDatos()
 	{
 		parent::$_perimetro = (($_ladoDos * 2 ) + ($_ladoUno * 2) );
+		parent::$_superficie = ($_ladoUno * $_ladoDos);
 
 	}
 
 	function Dibujar()
-	{return }
+	{
+		echo "********<br>";
+		echo "********<br>";
+		echo "********<br>";
+		echo "********<br>";
+
+	}
 
 	function ToString()
 	{return "String";}
@@ -79,13 +88,10 @@ class Rectangulo extends FiguraGeometrica
 
 class Triangulo extends FiguraGeometrica
 {
-
-
-	
 	//Atributos
 
-	$_altura;
-	$_base; 
+	private $_altura;
+	private $_base; 
 	
 	//Constructor
 
@@ -93,18 +99,36 @@ class Triangulo extends FiguraGeometrica
 	{
 		$_altura = $h;
 		$_base = $b;
+
+		$this->CalcularDatos();
 	}
 
 	//Funciones
 
 	protected function CalcularDatos()
-	{}
+	{
+		parent::$_perimetro = ($this->_base  * 3);
+		parent::$_superficie = ($this->_base * $this->_altura / 2);
+
+	}
 
 	function Dibujar()
-	{return "String";}
+	{
+		echo "   *   <br>";
+		echo "  ***  <br>";
+		echo " ***** <br>";
+		echo "*******<br>";
+
+	}
 
 	function ToString()
-	{return "String";}
+	{
+		echo "Perimetro: parent::$_perimetro<br>";
+		echo "Superficie: parent::$_superficie<br>";
+		echo "Forma Geometrica: <br>";
+		Dibujar();
+
+	}
 
 
 }
