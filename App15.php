@@ -24,13 +24,12 @@ abstract class FiguraGeometrica
 	
 	//Metodos
 
-	abstract protected function CalcularDatos()
-	{
-		
-	}
+	abstract protected function CalcularDatos();
 
-	abstract function Dibujar()
-	{return "string";}
+	
+
+	abstract function Dibujar();
+	
 
 	function GetColor()
 	{return $_color;}
@@ -38,7 +37,7 @@ abstract class FiguraGeometrica
 	function SetColor($x)
 	{$_color = $x;}
 
-	virtual function ToString()
+	function ToString()
 	{return "string";}
 
 
@@ -64,10 +63,13 @@ class Rectangulo extends FiguraGeometrica
 	//Metodos
 
 	protected function CalcularDatos()
-	{}
+	{
+		parent::$_perimetro = (($_ladoDos * 2 ) + ($_ladoUno * 2) );
+
+	}
 
 	function Dibujar()
-	{return "String";}
+	{return }
 
 	function ToString()
 	{return "String";}
@@ -77,6 +79,8 @@ class Rectangulo extends FiguraGeometrica
 
 class Triangulo extends FiguraGeometrica
 {
+
+
 	
 	//Atributos
 
